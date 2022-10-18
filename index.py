@@ -8,7 +8,7 @@ def index():
     homepage = "<h1>吳若耶Python+flask+Vercel網頁</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
-    homepage += "<a href=/welcome?nick=wendy>傳送使用者暱稱</a><br>"
+    homepage += "<a href=/welcome?nick=若耶>傳送使用者暱稱</a><br>"
     homepage += "<a href=/account>表單輸入實例</a><br><br>"
     homepage += "<a href=/about>wendy簡介網頁</a><br>"
     return homepage
