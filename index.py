@@ -28,7 +28,7 @@ def welcome():
     user = request.values.get("nick")
     return render_template("welcome.html", name=user)
 
-@app.route("/me")
+@app.route("/about")
 def about():
     return render_template("wendy.html")
 
