@@ -8,9 +8,9 @@ def index():
     homepage = "<h1>吳若耶Python+flask+Vercel網頁</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
-    homepage += "<a href=/welcome?nick=tcyang>傳送使用者暱稱</a><br>"
-    homepage += "<a href=/account>網頁表單輸入實例</a><br><br>"
-    homepage += "<a href=/about>子青簡介網頁</a><br>"
+    homepage += "<a href=/welcome?nick=wendy>傳送使用者暱稱</a><br>"
+    homepage += "<a href=/account>表單輸入實例</a><br><br>"
+    homepage += "<a href=/about>wendy簡介網頁</a><br>"
     return homepage
 
 @app.route("/mis")
@@ -28,9 +28,9 @@ def welcome():
     user = request.values.get("nick")
     return render_template("welcome.html", name=user)
 
-@app.route("/about")
+@app.route("/me")
 def about():
-    return render_template("aboutme.html")
+    return render_template("wendy.html")
 
 @app.route("/account", methods=["GET", "POST"])
 def account():
