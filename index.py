@@ -11,6 +11,7 @@ def index():
     homepage += "<a href=/welcome?nick=若耶>傳送使用者暱稱</a><br>"
     homepage += "<a href=/account>表單輸入實例</a><br><br>"
     homepage += "<a href=/about>wendy簡介網頁</a><br>"
+    homepage += "<a href=/search>選修課程查詢</a><br><br>"
     return homepage
 
 @app.route("/mis")
@@ -43,5 +44,13 @@ def account():
         return render_template("account.html")
 
 
+@app.route("/search", methods=["GET","POST"])
+def search():
+    if request.method == "POST":
+        cond = request.form["keyword"]
+        result = "您輸入的課程關鍵字是:" + cond
+        return result
+    else:
+        return render_template("search.html")
 #if __name__ == "__main__":
 #    app.run()
