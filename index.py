@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request
 from datetime import datetime, timezone, timedelta
 
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+cred = credentials.Certificate("serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -49,8 +55,21 @@ def search():
     if request.method == "POST":
         cond = request.form["keyword"]
         result = "您輸入的課程關鍵字是:" + cond
+
+
+        db = firestore.client()
+        collection_rref = db.collection("111")
+        docs = collection_rref.get()
+        result = ""
+        for doc in docs:
+            dict = doc.to_dict()
+            if cond in dict["Course"]:
+                result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程"
+                result += dict["Time"] + "於" + dict["Room"] + "上課\n"
+
         return result
     else:
         return render_template("search.html")
+
 #if __name__ == "__main__":
 #    app.run()
