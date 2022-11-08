@@ -63,10 +63,12 @@ def search():
         result = ""
         for doc in docs:
             dict = doc.to_dict()
-            if cond in dict["Course"]:
+            if cond in dict["Course"] + ["Leacture"]:
                 result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程"
                 result += dict["Time"] + "於" + dict["Room"] + "上課<br>"
-
+        
+        if result == "":
+            result = "抱歉，找不到相關結果"
         return result
     else:
         return render_template("search.html")
