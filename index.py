@@ -49,6 +49,16 @@ def account():
     else:
         return render_template("account.html")
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        cond = request.form["keyword"]
+        pwd = request.form["pwd"]
+        result = "您輸入的課程關鍵字是：" + cond 
+        return result
+    else:
+        return render_template("search.html")
+        
         if result == "":
             result = "抱歉，找不到相關結果"
         
