@@ -65,7 +65,7 @@ def search():
         for doc in docs:
             dict = doc.to_dict()
             if cond in dict["Course"] and comd in dict["Leacture"]:
-                result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程,"
+                result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程,每周"
                 result += dict["Time"] + "於" + dict["Room"] + "上課<br>"
             
         if result == "":
