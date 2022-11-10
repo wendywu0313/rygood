@@ -62,9 +62,6 @@ def search():
         if result == "":
             result = "抱歉，找不到相關結果"
         
-        return result
-    else:
-        return render_template("search.html")
-
+        
 #if __name__ == "__main__":
 #    app.run()
