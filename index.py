@@ -55,7 +55,7 @@ def search():
         cond = request.form["keyword"]
         result = "您輸入的課程關鍵字是：" + cond
     
-        cond = request.form["word"]
+        comd = request.form["word"]
         result = "您輸入的教師關鍵字是：" + comd
 
         db = firestore.client()
