@@ -54,7 +54,7 @@ def search():
     if request.method == "POST":
         cond = request.form["keyword"]
         result = "您輸入的課程關鍵字是：" + cond
-    else request.method == "POST":
+    
         cond = request.form["word"]
         result = "您輸入的教師關鍵字是：" + comd
 
