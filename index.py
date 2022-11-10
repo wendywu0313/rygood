@@ -54,7 +54,9 @@ def search():
     if request.method == "POST":
         cond = request.form["keyword"]
         result = "您輸入的課程關鍵字是：" + cond
-        
+    else request.method == "POST":
+        cond = request.form["word"]
+        result = "您輸入的教師關鍵字是：" + comd
 
         db = firestore.client()
         collection_rref = db.collection("111")
@@ -62,7 +64,7 @@ def search():
         result = ""
         for doc in docs:
             dict = doc.to_dict()
-            if cond in dict["Course"]:
+            if cond in dict["Course"] and comd in dict["Leacture"]:
                 result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程,"
                 result += dict["Time"] + "於" + dict["Room"] + "上課<br>"
             
