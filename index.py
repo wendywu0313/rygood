@@ -65,15 +65,13 @@ def search():
             if cond in dict["Course"]:
                 result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程"
                 result += dict["Time"] + "於" + dict["Room"] + "上課<br>"
-
-        return result
-    
-            if result == "":
+            
+        if result == "":
             result = "抱歉，找不到相關結果"
-
+        
+        return result
     else:
         return render_template("search.html")
-        
-        
+              
 #if __name__ == "__main__":
 #    app.run()
