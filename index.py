@@ -63,7 +63,7 @@ def search():
             dict = doc.to_dict()
             if cond in dict["Course"]:
                 result += dict["Leacture"] + "老師開的" + dict["Course"] + "課程"
-                result += dict["Time"] + "於" + dict["Room"] + "上課\n"
+                result += dict["Time"] + "於" + dict["Room"] + "上課<br>"
 
 
         return result
